@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wearable.view.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <!-- Button to trigger presentation of delayed confirmation view -->
+    <Button
+        android:id="@+id/trigger_button"
+        android:layout_width="@dimen/trigger_button_size"
+        android:layout_height="@dimen/trigger_button_size"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:background="@drawable/trigger_button_background"
+        android:gravity="center"
+        android:lines="2"
+        android:text="Change Language"
+        android:textSize="14sp"
+        app:layout_box="all"
+        />
+
+    <!-- This will remain hidden until the button is clicked -->
+
+    <android.support.wearable.view.DelayedConfirmationView
+        android:id="@+id/delayed_confirm"
+        android:layout_width="@dimen/delayed_confirmation_size"
+        android:layout_height="@dimen/delayed_confirmation_size"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_full_cancel"
+        app:layout_box="all"
+        app:circle_color="@color/blue"
+        app:circle_border_color="@color/green"
+        app:circle_border_width="@dimen/delayed_confirmation_border_width"
+        app:circle_radius="@dimen/delayed_confirmation_radius"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Ringing phone..."/>
+
+</android.support.wearable.view.BoxInsetLayout>
