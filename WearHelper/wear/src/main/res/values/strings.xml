@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Smart Helper</string>
+    <string name="trigger_button_text">Alarm phone</string>
+    <string name="trigger_button_text_2">Battery Status</string>
+    <string name="message_canceled">Canceled!</string>
+    <string name="message_confirmed">Confirmed!</string>
+    <string name="mhead">Wear Helper!</string>
+
+    <string name="left_phone_title">Forgetting something?</string>
+    <string name="left_phone_content">You may have left your phone behind.</string>
+
+    <string name="hello">Hello World!</string>
+    <string name="title">Hello Notification!</string>
+    <string name="notification_posted">Notification posted</string>
+
+    <string name="batterystatus">Battery Status</string>
+    <string name="findmyphone">Find My Phone</string>
+
+</resources>

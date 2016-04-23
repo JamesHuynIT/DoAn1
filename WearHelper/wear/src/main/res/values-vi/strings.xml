@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Smart Helper</string>
+    <string name="trigger_button_text">Rung chuông</string>
+    <string name="trigger_button_text_2">Tình trạng PIN</string>
+    <string name="message_canceled">Kết thúc!</string>
+    <string name="message_confirmed">Xác nhận!</string>
+    <string name="mhead">Wear Helper!</string>
+
+    <string name="left_phone_title">Quên gì chăng?</string>
+    <string name="left_phone_content">Bạn đã để quên điện thoại đâu đó.</string>
+
+    <string name="hello">Hello World!</string>
+    <string name="title">Hello Notification!</string>
+    <string name="notification_posted">Notification posted</string>
+
+    <string name="batterystatus">Tình trạng PIN</string>
+    <string name="findmyphone">Tìm điện thoại</string>
+
+</resources>
