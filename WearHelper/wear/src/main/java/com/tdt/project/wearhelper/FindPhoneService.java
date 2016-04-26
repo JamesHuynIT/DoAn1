@@ -62,8 +62,8 @@ public class FindPhoneService extends IntentService implements GoogleApiClient.C
                 DataItemBuffer result = Wearable.DataApi.getDataItems(mGoogleApiClient).await();
                 try {
                     if (result.getStatus().isSuccess()) {
-                        if (result.getCount() == 3) {
-                            alarmOn = DataMap.fromByteArray(result.get(2).getData())
+                        if (result.getCount() == 4) {
+                            alarmOn = DataMap.fromByteArray(result.get(1).getData())
                                     .getBoolean(FIELD_ALARM_ON, false);
                             broadcastIntent.putExtra("AlarmOn", true);
                             sendBroadcast(broadcastIntent);
@@ -105,7 +105,7 @@ public class FindPhoneService extends IntentService implements GoogleApiClient.C
     @Override
     public void onConnectionSuspended(int i) {
         Notification notification = new NotificationCompat.Builder(getApplication())
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.ic_launcher)
                 .setContentTitle("Smart Helper")
                 .setContentText("CONNECT LOST")
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
@@ -119,7 +119,7 @@ public class FindPhoneService extends IntentService implements GoogleApiClient.C
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         Notification notification = new NotificationCompat.Builder(getApplication())
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.ic_launcher)
                 .setContentTitle("Smart Helper")
                 .setContentText("CAN'T CONNECT")
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))

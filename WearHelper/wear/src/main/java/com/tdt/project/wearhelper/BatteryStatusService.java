@@ -62,8 +62,8 @@ public class BatteryStatusService extends IntentService implements GoogleApiClie
                 DataItemBuffer result = Wearable.DataApi.getDataItems(mGoogleApiClient).await();
                 try {
                     if (result.getStatus().isSuccess()) {
-                        if (result.getCount() == 3) {
-                            phoneStatus = DataMap.fromByteArray(result.get(2).getData())
+                        if (result.getCount() == 4) {
+                            phoneStatus = DataMap.fromByteArray(result.get(3).getData())
                                     .getBoolean(PHONE_STATUS, false);
                             broadcastIntentConnnect.putExtra("phoneStatus", true);
                             sendBroadcast(broadcastIntentConnnect);

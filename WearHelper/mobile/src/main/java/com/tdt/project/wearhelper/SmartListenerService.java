@@ -16,11 +16,10 @@ import com.google.android.gms.wearable.WearableListenerService;
 
 import java.io.IOException;
 
-public class SoundAlarmListenerService extends WearableListenerService {
+public class SmartListenerService extends WearableListenerService {
 
     private static final String TAG = "FIND_MY_PHONE";
     private static final String FIELD_ALARM_ON = "alarm_on";
-    private static final String PHONE_STATUS = "PHONE_STATUS";
     Battery battery;
     int notificationId = 1;
 
@@ -74,8 +73,6 @@ public class SoundAlarmListenerService extends WearableListenerService {
             } else if (event.getType() == DataEvent.TYPE_CHANGED) {
                 Boolean alarmOn =
                         DataMap.fromByteArray(event.getDataItem().getData()).get(FIELD_ALARM_ON);
-                Boolean batteryStatus =
-                        DataMap.fromByteArray(event.getDataItem().getData()).get(PHONE_STATUS);
                 if (alarmOn) {
                     mOrigVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_ALARM);
                     mMediaPlayer.reset();
@@ -95,10 +92,6 @@ public class SoundAlarmListenerService extends WearableListenerService {
                     if (mMediaPlayer.isPlaying()) {
                         mMediaPlayer.stop();
                     }
-                }
-                else if (batteryStatus){
-                    String send = "Battery now is: " + battery.getBatteryLevel(this) + "%";
-                    sendNotification(send);
                 }
             }
         }
